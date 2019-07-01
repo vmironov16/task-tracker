@@ -4,14 +4,21 @@
       "email": "admin@admin.com",
       "password": "$2a$10$iVZaQLJuj9JdUGeohk6l1OACeGqIkFirFkFKbIsQwmflQvIB3Co92",
       "id": 1
-    },
-    {
-      "email": "user@mail.com",
-      "password": "$2a$10$Y9YdHshX0KoyrRvCXU204.nNZ8/e0t8nlx/69jEAlHycvZNtYnpJ.",
-      "id": 2
     }
   ],
-  "tasks": [],
+  "tasks": [
+    {
+      "title": "New Task",
+      "description": "Description",
+      "statusId": 0,
+      "priority": 4,
+      "deadlineDate": "2019-07-02",
+      "doneDate": "",
+      "createDate": "2019-07-01",
+      "userId": 1,
+      "id": 1
+    }
+  ],
   "tasksStatuses": [
     {
       "id": 0,

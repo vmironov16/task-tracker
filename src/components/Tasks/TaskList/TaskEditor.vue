@@ -34,7 +34,7 @@
 
                         v-card-text
                             v-textarea.description(
-                                name='input-7-1'
+                                name='description'
                                 box
                                 label='Description'
                                 auto-grow=true
@@ -80,9 +80,9 @@
                                                 @click='modalDeadlineDate = false'
                                             ) Cancel
                                             v-btn(
-                                                flat=''
+                                                flat
                                                 color='primary'
-                                                @click='$refs.dialogDeadlineDate.save(task.deadlineDate)'
+                                                @click='dialogDeadlineDateSubmit()'
                                             ) OK
                             .date-done
                                 v-flex(
@@ -123,7 +123,7 @@
                                             v-btn(
                                             flat=''
                                             color='primary'
-                                            @click='$refs.dialogDoneDate.save(task.doneDate)'
+                                            @click='dialogDoneDateSubmit()'
                                             ) OK
 
                             .status
@@ -287,6 +287,13 @@ export default {
       if (!this.statusList) { return null; }
       return this.statusList.find(item => item.id === statusId);
     },
+    dialogDeadlineDateSubmit() {
+      this.$refs.dialogDeadlineDate.save(this.task.deadlineDate);
+    },
+    dialogDoneDateSubmit() {
+      this.$refs.dialogDoneDate.save(this.task.doneDate);
+    },
+
   },
   mounted() {
   },

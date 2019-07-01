@@ -10,16 +10,19 @@
             color="primary"
         ).darken-4
             v-card-title
-                strong.subheading Get connected with me!
+                strong.subheading Social links
                 v-spacer
                 v-btn.mx-3(
-                    v-for='icon in icons'
-                    :key='icon'
-                    dark icon
+                    v-for='(item, key) in socialLinks'
+                    :key='key'
+                    dark
+                    icon
+                    :href="item.link"
+                    target="_blank"
                 )
                     v-icon(
                         size='24px'
-                    ) {{ icon }}
+                    ) {{ item.icon }}
             v-card-actions.grey.darken-3.justify-center
                 | ©2019 —
                 strong Vladislav Mironov
@@ -27,15 +30,11 @@
 
 <script>
 export default {
-  data: () => ({
-    icons: [
-      'face',
-      'fab fa-twitter',
-      'fab fa-google-plus',
-      'fab fa-linkedin',
-      'fab fa-instagram',
-    ],
-  }),
+  computed: {
+    socialLinks() {
+      return this.$store.getters.socialLinks;
+    },
+  },
 };
 </script>
 

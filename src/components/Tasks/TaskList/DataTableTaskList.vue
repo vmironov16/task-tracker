@@ -27,7 +27,9 @@
                         td.text-xs-left {{ props.item.title }}
                         td.text-xs-left {{ props.item.statusTitle }}
                         td.text-xs-left {{ props.item.priority }}
+                        td.text-xs-left {{ props.item.createDate }}
                         td.text-xs-left {{ props.item.deadlineDate }}
+                        td.text-xs-left {{ props.item.doneDate }}
                         td.text-xs-left
                             v-icon.mr-2(small='', @click="$emit('updateTask', props.item)") edit
                             v-icon(small='', @click="$emit('deleteTask', props.item.id)") delete
@@ -56,9 +58,19 @@ export default {
         value: 'priority',
       },
       {
+        text: 'Create Date',
+        align: 'left',
+        value: 'createDate',
+      },
+      {
         text: 'Deadline',
         align: 'left',
         value: 'deadlineDate',
+      },
+      {
+        text: 'Done Date',
+        align: 'left',
+        value: 'doneDate',
       },
       {
         text: 'Actions',

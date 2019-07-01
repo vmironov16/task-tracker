@@ -2,6 +2,22 @@ export default {
   state: {
     loading: false,
     error: null,
+    footerData: {
+      socialLinks: [
+        {
+          icon: 'fab fa-telegram-plane',
+          link: 'https://t.me/vmironov16',
+        },
+        {
+          icon: 'fab fa-whatsapp',
+          link: 'https://wa.me/79991554016',
+        },
+        {
+          icon: 'fab fa-github',
+          link: 'https://github.com/vmironov16',
+        },
+      ],
+    },
     rulesLoginForm: {
       passwordLengthRule: 5,
     },
@@ -39,6 +55,9 @@ export default {
     },
   },
   getters: {
+    socialLinks(state) {
+      return state.footerData.socialLinks;
+    },
     loading(state) {
       return state.loading;
     },
